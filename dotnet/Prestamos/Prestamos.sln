@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestamos.Api", "Prestamos.Api\Prestamos.Api.csproj", "{653AB326-0212-4852-9D0D-8846B842556C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{3457B775-1401-49E4-8144-A70FEB8162FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Materials", "Materials", "{C400DC12-4345-4B7C-8B38-259D3DE7E8E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestamos.Materials.Domain", "Microservices\Materials\Prestamos.Materials.Domain\Prestamos.Materials.Domain.csproj", "{C6F69DA3-7D1B-4244-B783-E4D0DDF04863}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestamos.Materials.Contracts", "Microservices\Materials\Prestamos.Materials.Contracts\Prestamos.Materials.Contracts.csproj", "{577441AB-5766-4236-B14B-AB5534D16BC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestamos.Materials.Application", "Microservices\Materials\Prestamos.Materials.Application\Prestamos.Materials.Application.csproj", "{66EC4BEC-4759-48D3-B31C-EA65B43CE9D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestamos.Materials.Persistence", "Microservices\Materials\Prestamos.Materials.Persistence\Prestamos.Materials.Persistence.csproj", "{9F2D7F4B-DE91-43BA-A9D2-623F2EEAD64E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7754F642-BF3E-4F38-B8F9-B4BBCDFF15BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Materials", "Materials", "{6F829A0F-699A-44F3-B577-C63473136975}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{653AB326-0212-4852-9D0D-8846B842556C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{653AB326-0212-4852-9D0D-8846B842556C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{653AB326-0212-4852-9D0D-8846B842556C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{653AB326-0212-4852-9D0D-8846B842556C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F69DA3-7D1B-4244-B783-E4D0DDF04863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F69DA3-7D1B-4244-B783-E4D0DDF04863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F69DA3-7D1B-4244-B783-E4D0DDF04863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F69DA3-7D1B-4244-B783-E4D0DDF04863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{577441AB-5766-4236-B14B-AB5534D16BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{577441AB-5766-4236-B14B-AB5534D16BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{577441AB-5766-4236-B14B-AB5534D16BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{577441AB-5766-4236-B14B-AB5534D16BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66EC4BEC-4759-48D3-B31C-EA65B43CE9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66EC4BEC-4759-48D3-B31C-EA65B43CE9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66EC4BEC-4759-48D3-B31C-EA65B43CE9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66EC4BEC-4759-48D3-B31C-EA65B43CE9D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2D7F4B-DE91-43BA-A9D2-623F2EEAD64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2D7F4B-DE91-43BA-A9D2-623F2EEAD64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2D7F4B-DE91-43BA-A9D2-623F2EEAD64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2D7F4B-DE91-43BA-A9D2-623F2EEAD64E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C400DC12-4345-4B7C-8B38-259D3DE7E8E2} = {3457B775-1401-49E4-8144-A70FEB8162FC}
+		{C6F69DA3-7D1B-4244-B783-E4D0DDF04863} = {C400DC12-4345-4B7C-8B38-259D3DE7E8E2}
+		{577441AB-5766-4236-B14B-AB5534D16BC5} = {C400DC12-4345-4B7C-8B38-259D3DE7E8E2}
+		{66EC4BEC-4759-48D3-B31C-EA65B43CE9D6} = {C400DC12-4345-4B7C-8B38-259D3DE7E8E2}
+		{9F2D7F4B-DE91-43BA-A9D2-623F2EEAD64E} = {C400DC12-4345-4B7C-8B38-259D3DE7E8E2}
+		{6F829A0F-699A-44F3-B577-C63473136975} = {7754F642-BF3E-4F38-B8F9-B4BBCDFF15BB}
+	EndGlobalSection
+EndGlobal
