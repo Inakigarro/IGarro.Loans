@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestamos.Api", "Prestamos.Api\Prestamos.Api.csproj", "{653AB326-0212-4852-9D0D-8846B842556C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loans.Api", "Loans.Api\Loans.Api.csproj", "{653AB326-0212-4852-9D0D-8846B842556C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{3457B775-1401-49E4-8144-A70FEB8162FC}"
 EndProject

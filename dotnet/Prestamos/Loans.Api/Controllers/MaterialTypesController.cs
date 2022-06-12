@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Prestamos.Materials.Contracts.Messages.MaterialTypes;
 
-namespace Prestamos.Api.Controllers
+namespace Loans.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
