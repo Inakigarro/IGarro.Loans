@@ -27,6 +27,5 @@
 
   <ItemGroup>
     <Folder Include="Consumers\Materials" />
-    <Folder Include="Consumers\MaterialTypes\GetAllMaterialTypes" />
   </ItemGroup>
 </Project>

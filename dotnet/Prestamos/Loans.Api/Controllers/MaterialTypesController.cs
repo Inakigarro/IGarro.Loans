@@ -35,6 +35,12 @@ namespace Loans.Api.Controllers
             var response = await _client.GetResponse<GetMaterialTypeByIdResponse>(getMaterialTypeById);
             return response.Message;
         }
+
+        public async Task<GetAllMaterialTypesResponse> GetAllMaterialTypes()
+        {
+            var response = await _client.GetResponse<GetAllMaterialTypesResponse>(new GetAllMaterialTypes());
+            return response.Message;
+        }
     }
 }
 
