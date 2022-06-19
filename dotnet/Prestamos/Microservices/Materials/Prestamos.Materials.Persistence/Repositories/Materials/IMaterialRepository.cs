@@ -10,7 +10,7 @@ namespace Prestamos.Materials.Persistence.Repositories.Materials
         /// </summary>
         /// <param name="createMaterial"></param>
         /// <returns></returns>
-        public Task<Material> Add(CreateMaterial createMaterial); 
+        public Task Add(Material material); 
 
         /// <summary>
         /// Update a Material.
