@@ -9,12 +9,14 @@ namespace Loans.Api.Controllers
     public class MaterialTypesController : ControllerBase
     {
         private readonly IPublishEndpoint _publishEndpoint;
-        private readonly IRequestClient<GetMaterialTypeById> _client;
+        private readonly IRequestClient<GetMaterialTypeById> _materialTypeByIdClient;
+        private readonly IRequestClient<GetAllMaterialTypes> _allMaterialTypesClient;
 
-        public MaterialTypesController(IPublishEndpoint publishEndpoint, IRequestClient<GetMaterialTypeById> client)
+        public MaterialTypesController(IPublishEndpoint publishEndpoint, IRequestClient<GetMaterialTypeById> materialTypeByIdClient, IRequestClient<GetAllMaterialTypes> allMaterialTypesClient)
         {
             _publishEndpoint = publishEndpoint;
-            _client = client;
+            _materialTypeByIdClient = materialTypeByIdClient;
+            _allMaterialTypesClient = allMaterialTypesClient;
         }
 
         [HttpPost("CreateMaterialType")]
@@ -32,13 +34,14 @@ namespace Loans.Api.Controllers
         [HttpPost("GetMaterialTypeById")]
         public async Task<GetMaterialTypeByIdResponse> GetMaterialTypeById(GetMaterialTypeById getMaterialTypeById)
         {
-            var response = await _client.GetResponse<GetMaterialTypeByIdResponse>(getMaterialTypeById);
+            var response = await _materialTypeByIdClient.GetResponse<GetMaterialTypeByIdResponse>(getMaterialTypeById);
             return response.Message;
         }
 
+        [HttpGet("GetAllMaterialTypes")]
         public async Task<GetAllMaterialTypesResponse> GetAllMaterialTypes()
         {
-            var response = await _client.GetResponse<GetAllMaterialTypesResponse>(new GetAllMaterialTypes());
+            var response = await _allMaterialTypesClient.GetResponse<GetAllMaterialTypesResponse>(new GetAllMaterialTypes());
             return response.Message;
         }
     }
