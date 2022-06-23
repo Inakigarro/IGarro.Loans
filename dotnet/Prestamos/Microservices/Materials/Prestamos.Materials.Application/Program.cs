@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Prestamos.Materials.Application.AutoMapperProfiles;
 using Prestamos.Materials.Application.Consumers;
 using Prestamos.Materials.Application.Consumers.GetMaterialByIdConsumer;
+using Prestamos.Materials.Application.Consumers.MaterialTypes.GetAllMaterialTypes;
 using Prestamos.Materials.Persistence;
 using Prestamos.Materials.Persistence.Repositories;
 using Prestamos.Materials.Persistence.Repositories.Materials;
@@ -52,6 +53,7 @@ namespace Prestamos.Materials.Application
                         mt.AddConsumer<CreateMaterialTypeConsumer, CreateMaterialTypeConsumerDefinition>();
                         mt.AddConsumer<UpdateMaterialTypeConsumer, UpdateMaterialTypeConsumerDefinition>();
                         mt.AddConsumer<GetMaterialTypeByIdConsumer, GetMaterialTypeConsumerDefinition>();
+                        mt.AddConsumer<GetAllMaterialTypesConsumer, GetAllMaterialTypesConsumerDefinition>();
                     });
 
                     services.AddDbContext<MaterialsDbContext>(options =>
