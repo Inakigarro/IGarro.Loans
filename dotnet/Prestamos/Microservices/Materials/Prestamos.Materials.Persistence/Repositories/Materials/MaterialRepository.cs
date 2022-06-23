@@ -1,4 +1,5 @@
-﻿using Prestamos.Materials.Contracts.Messages.Materials;
+﻿using Microsoft.EntityFrameworkCore;
+using Prestamos.Materials.Contracts.Messages.Materials;
 using Prestamos.Materials.Domain.Entities;
 
 namespace Prestamos.Materials.Persistence.Repositories.Materials
@@ -12,18 +13,36 @@ namespace Prestamos.Materials.Persistence.Repositories.Materials
             _dbContext = dbContext;
         }
 
-        public async Task Add(Material material)
+        public async Task<Material> Add(CreateMaterial material)
         {
             await using (_dbContext)
             {
-                await _dbContext.Materials.AddAsync(material);
+                var materialType = await _dbContext.MaterialTypes.FindAsync(material.TypeCorrelationId);
+                
+                if(materialType == null)
+                {
+                    throw new InvalidOperationException($"An error occured while creating a material. There is no material type with given CorrelationId: {material.TypeCorrelationId}");
+                }
+                var newMaterial = new Material();
+
+                newMaterial.SetDisplayName(material.DisplayName);
+                newMaterial.SetMaterialType(materialType);
+                
+                await _dbContext.Materials.AddAsync(newMaterial);
                 var result = await _dbContext.SaveChangesAsync();
+                
+                if (result != 1)
+                {
+                    throw new InvalidOperationException("An error occured when creating a new Material Type");
+                }
+
+                return newMaterial;
             }
         }
 
         public async Task<Material> Update(UpdateMaterial updateMaterial)
         {
-            await using (_dbContext)
+            using (_dbContext)
             {
                 var updatedMaterial = _dbContext.Materials.Where(x => x.CorrelationId == updateMaterial.CorrelationId).FirstOrDefault();
 
@@ -50,14 +69,29 @@ namespace Prestamos.Materials.Persistence.Repositories.Materials
             }
         }
 
-        public Task<IEnumerable<Material>> GetAll()
+        public async Task<IEnumerable<Material>> GetAll()
         {
-            throw new NotImplementedException();
+            await using (_dbContext)
+            {
+                var materials = await _dbContext.Materials.ToListAsync();
+                return materials;
+            }
         }
 
-        public Task<Material> GetById(Guid correlationId)
+        public async Task<Material> GetById(Guid correlationId)
         {
-            throw new NotImplementedException();
+            await using (_dbContext)
+            {
+                var material = await _dbContext.Materials.FindAsync(correlationId);
+
+                if (material == null)
+                {
+                    throw new InvalidOperationException(
+                        $"There is no Material with the given correlationId: {correlationId}");
+                }
+
+                return material;   
+            }
         }
     }
 }

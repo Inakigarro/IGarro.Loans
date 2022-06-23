@@ -15,7 +15,7 @@ namespace Prestamos.Materials.Persistence.Repositories
         
         public async Task<MaterialType> Add(CreateMaterialType materialType)
         {
-            await using (_dbContext)
+            using (_dbContext)
             {
                 var newMaterialType = new MaterialType();
             
@@ -36,7 +36,7 @@ namespace Prestamos.Materials.Persistence.Repositories
 
         public async Task<MaterialType> Update(UpdateMaterialType materialType)
         {
-            await using (_dbContext)
+            using (_dbContext)
             {
                 var updatedMaterialType = await _dbContext.MaterialTypes.FindAsync(materialType.CorrelationId);
 
@@ -61,7 +61,7 @@ namespace Prestamos.Materials.Persistence.Repositories
 
         public async Task<MaterialType> GetById(Guid correlationId)
         {
-            await using (_dbContext)
+            using (_dbContext)
             {
                 var materialType = await _dbContext.MaterialTypes.FindAsync(correlationId);
                 
@@ -76,7 +76,7 @@ namespace Prestamos.Materials.Persistence.Repositories
 
         public async Task<IEnumerable<MaterialType>> GetAll()
         {
-            await using (_dbContext)
+            using (_dbContext)
             {
                 var materialTypes = await _dbContext.MaterialTypes.ToListAsync();
                 return materialTypes;
