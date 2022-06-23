@@ -9,6 +9,7 @@ using Prestamos.Materials.Application.Consumers.GetMaterialByIdConsumer;
 using Prestamos.Materials.Application.Consumers.MaterialTypes.GetAllMaterialTypes;
 using Prestamos.Materials.Persistence;
 using Prestamos.Materials.Persistence.Repositories;
+using Prestamos.Materials.Persistence.Repositories.Materials;
 
 namespace Prestamos.Materials.Application
 {
@@ -26,6 +27,7 @@ namespace Prestamos.Materials.Application
                     services.AddAutoMapper(opts =>
                     {
                         opts.AddProfile(new MaterialTypeProfile());
+                        opts.AddProfile(new MaterialProfile());
                     });
                     
                     services.AddMassTransit(mt =>
@@ -45,6 +47,7 @@ namespace Prestamos.Materials.Application
                         mt.AddConsumer<CreateMaterialConsumer, CreateMaterialConsumerDefinition>();
                         mt.AddConsumer<UpdateMaterialConsumer, UpdateMaterialConsumerDefinition>();
                         mt.AddConsumer<GetMaterialByIdConsumer, GetMaterialByIdConsumerDefinition>();
+                        mt.AddConsumer<GetAllMaterialsConsumer, GetAllMaterialsConsumerDefinition>();
                         
                         // MaterialType Consumers.
                         mt.AddConsumer<CreateMaterialTypeConsumer, CreateMaterialTypeConsumerDefinition>();
@@ -61,6 +64,7 @@ namespace Prestamos.Materials.Application
                     });
 
                     services.AddScoped<IMaterialTypeRepository, MaterialTypeRepository>();
+                    services.AddScoped<IMaterialRepository, MaterialRepository>();
                 });
     }
 }
