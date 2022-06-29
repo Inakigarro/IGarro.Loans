@@ -12,8 +12,6 @@ namespace Prestamos.Materials.Domain.Entities
             this.CorrelationId = NewId.NextGuid();
         }
 
-        #region Properties
-
         /// <summary>
         /// Gets or sets the Material Correlation Id.
         /// </summary>
@@ -34,10 +32,6 @@ namespace Prestamos.Materials.Domain.Entities
         /// </summary>
         public MaterialType Type { get; set; } = null!;
 
-        #endregion
-
-        #region Methods
-
         public void SetDisplayName(string displayName)
         {
             if (displayName == String.Empty)
@@ -53,7 +47,5 @@ namespace Prestamos.Materials.Domain.Entities
             this.Type = type;
             this.TypeCorrelationId = type.CorrelationId;
         }
-        
-        #endregion
     }
 }

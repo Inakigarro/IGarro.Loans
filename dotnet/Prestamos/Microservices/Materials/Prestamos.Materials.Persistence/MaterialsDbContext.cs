@@ -17,8 +17,8 @@ namespace Prestamos.Materials.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfiguration(new MaterialTypeEntityTypeConfiguration());
-            modelBuilder.ApplyConfiguration(new MaterialEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new MaterialTypeEntityTypeConfiguration()).HasDefaultSchema("Materials");
+            modelBuilder.ApplyConfiguration(new MaterialEntityTypeConfiguration()).HasDefaultSchema("Materials");
         }
     }
 }

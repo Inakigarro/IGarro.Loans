@@ -12,14 +12,15 @@ using Prestamos.Materials.Persistence;
 namespace Prestamos.Materials.Persistence.Migrations
 {
     [DbContext(typeof(MaterialsDbContext))]
-    [Migration("20220611192225_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220627104759_InitialMigrate")]
+    partial class InitialMigrate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("Materials")
                 .HasAnnotation("ProductVersion", "7.0.0-preview.4.22229.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
@@ -42,7 +43,7 @@ namespace Prestamos.Materials.Persistence.Migrations
 
                     b.HasIndex("TypeCorrelationId");
 
-                    b.ToTable("Materials");
+                    b.ToTable("Materials", "Materials");
                 });
 
             modelBuilder.Entity("Prestamos.Materials.Domain.Entities.MaterialType", b =>
@@ -61,7 +62,7 @@ namespace Prestamos.Materials.Persistence.Migrations
 
                     b.HasKey("CorrelationId");
 
-                    b.ToTable("MaterialTypes");
+                    b.ToTable("MaterialTypes", "Materials");
                 });
 
             modelBuilder.Entity("Prestamos.Materials.Domain.Entities.Material", b =>

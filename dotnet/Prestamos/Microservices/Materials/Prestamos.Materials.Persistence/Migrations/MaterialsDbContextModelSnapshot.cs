@@ -17,6 +17,7 @@ namespace Prestamos.Materials.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("Materials")
                 .HasAnnotation("ProductVersion", "7.0.0-preview.4.22229.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
@@ -39,7 +40,7 @@ namespace Prestamos.Materials.Persistence.Migrations
 
                     b.HasIndex("TypeCorrelationId");
 
-                    b.ToTable("Materials");
+                    b.ToTable("Materials", "Materials");
                 });
 
             modelBuilder.Entity("Prestamos.Materials.Domain.Entities.MaterialType", b =>
@@ -58,7 +59,7 @@ namespace Prestamos.Materials.Persistence.Migrations
 
                     b.HasKey("CorrelationId");
 
-                    b.ToTable("MaterialTypes");
+                    b.ToTable("MaterialTypes", "Materials");
                 });
 
             modelBuilder.Entity("Prestamos.Materials.Domain.Entities.Material", b =>
