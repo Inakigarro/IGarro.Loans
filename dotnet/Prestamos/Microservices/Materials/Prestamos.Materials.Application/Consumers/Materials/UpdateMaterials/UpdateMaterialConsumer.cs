@@ -11,7 +11,9 @@ namespace Prestamos.Materials.Application.Consumers
         private readonly IMaterialRepository _materialRepository;
         private readonly IMapper _mapper;
 
-        public UpdateMaterialConsumer(IMaterialRepository materialRepository, IMapper mapper)
+        public UpdateMaterialConsumer(
+            IMaterialRepository materialRepository,
+            IMapper mapper)
         {
             _materialRepository = materialRepository;
             _mapper = mapper;

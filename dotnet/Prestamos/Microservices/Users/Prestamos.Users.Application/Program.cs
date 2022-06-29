@@ -3,7 +3,9 @@ using Microsoft.Extensions.Hosting;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Prestamos.Users.Application.Consumers;
 using Prestamos.Users.Persistence;
+using Prestamos.Users.Persistence.Repositories.Users;
 
 namespace Prestamos.Users.Application
 {
@@ -34,6 +36,12 @@ namespace Prestamos.Users.Application
                             
                             cfg.ConfigureEndpoints(context);
                         });
+                        
+                        // Users consumers.
+                        mt.AddConsumer<CreateUserConsumer, CreateUserConsumerDefinition>();
+                        mt.AddConsumer<UpdateUserConsumer, UpdateUserConsumerDefinition>();
+                        mt.AddConsumer<GetUserByIdConsumer, GetUserByIdConsumerDefinition>();
+                        mt.AddConsumer<GetAllUsersConsumer, GetAllUsersConsumerDefinition>();
                     });
 
                     services.AddDbContext<UsersDbContext>(options =>
@@ -42,6 +50,8 @@ namespace Prestamos.Users.Application
                             "Server=localhost;Database=master;Trusted_Connection=True;TrustServerCertificate=True",
                             assembly => assembly.MigrationsAssembly(typeof(UsersDbContext).Assembly.FullName));
                     });
+
+                    services.AddScoped<IUserRepository, UsersRepository>();
                 });
     }
 }

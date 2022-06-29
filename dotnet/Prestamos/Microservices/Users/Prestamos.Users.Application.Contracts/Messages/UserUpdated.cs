@@ -1,10 +1,12 @@
 ﻿namespace Prestamos.Users.Application.Contracts
 {
-    /// <summary>
-    /// Message used to create a new User.
-    /// </summary>
-    public record CreateUser
+    public record UserUpdated
     {
+        /// <summary>
+        /// Gets or sets the User Correlation Id.
+        /// </summary>
+        public Guid CorrelationId { get; set; }
+
         /// <summary>
         /// Gets or sets the User DisplayName.
         /// </summary>
@@ -14,5 +16,6 @@
         /// Gets or sets the User Email.
         /// </summary>
         public string Email { get; set; } = null!;
-    }   
+    }
 }
+

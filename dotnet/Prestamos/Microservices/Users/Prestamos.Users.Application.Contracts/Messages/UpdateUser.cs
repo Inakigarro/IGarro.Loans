@@ -1,5 +1,8 @@
 ﻿namespace Prestamos.Users.Application.Contracts
 {
+    /// <summary>
+    /// Message used to update a User.
+    /// </summary>
     public record UpdateUser
     {
         /// <summary>
