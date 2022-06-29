@@ -6,7 +6,7 @@ namespace Loans.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MaterialsController
+    public class MaterialsController : ControllerBase
     {
         private readonly IPublishEndpoint _publishEndpoint;
         private readonly IRequestClient<GetMaterialById> _materialByIdClient;

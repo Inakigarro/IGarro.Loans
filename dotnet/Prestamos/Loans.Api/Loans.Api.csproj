@@ -16,6 +16,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Microservices\Materials\Prestamos.Materials.Contracts\Prestamos.Materials.Contracts.csproj" />
+      <ProjectReference Include="..\Microservices\Users\Prestamos.Users.Application.Contracts\Prestamos.Users.Application.Contracts.csproj" />
     </ItemGroup>
 
 </Project>
