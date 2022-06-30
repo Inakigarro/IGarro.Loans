@@ -3,6 +3,7 @@ using Microsoft.Extensions.Hosting;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Prestamos.Users.Application.AutoMapperProfiles;
 using Prestamos.Users.Application.Consumers;
 using Prestamos.Users.Persistence;
 using Prestamos.Users.Persistence.Repositories.Users;
@@ -22,6 +23,7 @@ namespace Prestamos.Users.Application
                 {
                     services.AddAutoMapper(opts =>
                     {
+                        opts.AddProfile(new UserProfile());
                     });
                     
                     services.AddMassTransit(mt =>

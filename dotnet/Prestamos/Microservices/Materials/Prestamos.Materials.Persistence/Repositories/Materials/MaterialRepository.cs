@@ -42,9 +42,9 @@ namespace Prestamos.Materials.Persistence.Repositories.Materials
 
         public async Task<Material> Update(UpdateMaterial updateMaterial)
         {
-            using (_dbContext)
+            await using (_dbContext)
             {
-                var updatedMaterial = _dbContext.Materials.Where(x => x.CorrelationId == updateMaterial.CorrelationId).FirstOrDefault();
+                var updatedMaterial = _dbContext.Materials.FirstOrDefault(x => x.CorrelationId == updateMaterial.CorrelationId);
 
                 if (updatedMaterial == null)
                 {
