@@ -1,0 +1,30 @@
+﻿namespace Prestamos.Loans.Contracts
+{
+    public record CreateLoan
+    {
+        /// <summary>
+        /// Gets the Loan's initial date.
+        /// </summary>
+        public DateTime InitialDate { get; set; }
+
+        /// <summary>
+        /// Gets the Loan's end date.
+        /// </summary>
+        public DateTime? EndDate { get; set; } = null!;
+        
+        /// <summary>
+        /// Gets the Loan's estimated end date.
+        /// </summary>
+        public DateTime EstimatedEndDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Owner's Correlation Id.
+        /// </summary>
+        public Guid OwnerCorrelationId { get; set; }
+
+        /// <summary>
+        /// Gets the Loan's Lines.
+        /// </summary>
+        public IEnumerable<LoanLineUpdated> LoanLines { get; set; } = new List<LoanLineUpdated>();
+    }
+}

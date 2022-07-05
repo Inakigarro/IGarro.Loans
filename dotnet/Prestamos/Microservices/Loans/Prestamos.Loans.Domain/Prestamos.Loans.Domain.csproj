@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MassTransit" Version="8.0.4-develop.502" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Materials\Prestamos.Materials.Domain\Prestamos.Materials.Domain.csproj" />
+      <ProjectReference Include="..\..\Users\Prestamos.Users.Domain\Prestamos.Users.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
