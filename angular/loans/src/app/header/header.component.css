@@ -1,4 +1,21 @@
 .header-main{
     display: flex;
-    font-size: larger;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.menu-button{
+    background: none;
+}
+
+.profile-button{
+    border: 1px solid red;
+    font-size: xxx-large;
+    padding: 5px;
+    border-radius: 50%;
+}
+.profile-button:hover{
+    cursor: pointer;
 }
