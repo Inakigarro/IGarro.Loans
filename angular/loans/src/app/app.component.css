@@ -1,0 +1,43 @@
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+        "header header header" 
+        "navbar main main"
+        "footer footer footer";
+        background-color: #2196F3;
+    grid-template-rows: 15% auto 10%;
+    grid-template-columns: 15% auto;
+    gap: 10px;
+    padding: 10px;
+    height: 100vh;
+}
+
+.grid-container > div{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.grid-container > app-header{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.grid-item-header{
+    grid-area: header;
+}
+
+.grid-item-nav-bar{
+    grid-area: navbar;
+}
+
+.grid-item-main{
+    grid-area: main;
+}
+
+.grid-item-footer{
+    grid-area: footer;
+}
