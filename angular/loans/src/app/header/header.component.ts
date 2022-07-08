@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { HeaderService } from './service/header.service';
 import * as HeaderActions from './state/header.actions';
 
 @Component({
@@ -9,10 +9,10 @@ import * as HeaderActions from './state/header.actions';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private store: Store) { }
+  constructor(private service: HeaderService) { }
 
   ngOnInit(): void {
-    this.store.dispatch(HeaderActions.testAction());
+    this.service.dispatch(HeaderActions.testAction());
   }
 
 }

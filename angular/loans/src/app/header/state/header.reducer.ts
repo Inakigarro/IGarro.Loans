@@ -7,7 +7,7 @@ export interface HeaderState {
     loaded: boolean
 }
 
-const initalState : HeaderState = {
+export const initalState : HeaderState = {
     loaded: false
 }
 

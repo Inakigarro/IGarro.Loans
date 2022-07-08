@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideMockStore } from '@ngrx/store/testing';
 import { HeaderComponent } from './header.component';
+import { HeaderService } from './service/header.service';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,7 +9,11 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent ],
+      providers:[
+        provideMockStore(),
+        HeaderService
+      ]
     })
     .compileComponents();
 
@@ -17,6 +22,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
+  
   it('should create', () => {
     expect(component).toBeTruthy();
   });
