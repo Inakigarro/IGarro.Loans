@@ -6,16 +6,22 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { ShellComponent, ShellModule } from './shell/shell.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { appReducer } from './state/app.reducer';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
     HeaderModule,
+    ShellModule,
+    StoreModule.forRoot({app: appReducer}, {}),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [],

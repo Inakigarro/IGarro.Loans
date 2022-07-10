@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { StoreModule } from '@ngrx/store';
 import * as Header from './state/header.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { HeaderEffects } from './state/header.effects';
 
 
 
@@ -14,9 +17,11 @@ import * as Header from './state/header.reducer';
   ],
   imports: [
     CommonModule,
+    MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    StoreModule.forFeature(Header.HEADER_FEATURE_KEY, Header.headerReducer)
+    StoreModule.forFeature(Header.HEADER_FEATURE_KEY, Header.headerReducer),
+    EffectsModule.forFeature([HeaderEffects])
   ],
   exports: [
     HeaderComponent

@@ -1,5 +1,9 @@
 import { createAction } from "@ngrx/store";
 
-export const testAction = createAction(
-    '[Header] - Testing header actions'
+export const initHeader = createAction(
+    '[Header] - Header initialized'
 );
+
+export const menuButtonClicked = createAction(
+    '[Header Menu Button] - Menu button clickead'
+)

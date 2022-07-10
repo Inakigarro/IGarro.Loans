@@ -1,21 +1,21 @@
-.header-main{
+mat-toolbar {
+    background: black;
+    color: white
+}
+.menu-button {
+    background: none;
+    color: white;
+}
+.shell-spacer {
+    flex: 1 1 auto;
+}
+.buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
 }
-
-.menu-button{
+.buttons .profile-button {
     background: none;
 }
-
-.profile-button{
-    border: 1px solid red;
-    font-size: xxx-large;
-    padding: 5px;
-    border-radius: 50%;
-}
-.profile-button:hover{
+.buttons .profile-button:hover{
     cursor: pointer;
 }

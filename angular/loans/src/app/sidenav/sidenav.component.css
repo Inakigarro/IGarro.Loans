@@ -1,0 +1,18 @@
+mat-sidenav {
+    background: black;
+    color: white;
+    width: 175px;
+}
+
+mat-sidenav-content {
+    background: lightskyblue;
+}
+
+.sidenav-list {
+    display: flex;
+    justify-content: center;
+}
+
+.body-container {
+    height: 100%;
+}

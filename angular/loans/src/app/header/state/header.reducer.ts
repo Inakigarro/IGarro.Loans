@@ -13,7 +13,7 @@ export const initalState : HeaderState = {
 
 export const headerReducer = createReducer(
     initalState,
-    on(HeaderActions.testAction, state => ({
+    on(HeaderActions.initHeader, state => ({
         ...state,
         loaded: true
     }))
