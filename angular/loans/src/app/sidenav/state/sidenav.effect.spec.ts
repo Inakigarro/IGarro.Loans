@@ -17,4 +17,10 @@ function configureTestingModule(
             provideMockStore(),
         ]
     })
-}
+};
+
+describe('Sidenav Effects', () => {
+    it('initHeader should dispatch initSidenav', () => {
+        
+    })
+})

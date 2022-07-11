@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import * as Header from './state/header.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { HeaderEffects } from './state/header.effects';
+import { MenuModule } from '../menu/menu.component';
 
 
 
@@ -20,6 +21,7 @@ import { HeaderEffects } from './state/header.effects';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MenuModule,
     StoreModule.forFeature(Header.HEADER_FEATURE_KEY, Header.headerReducer),
     EffectsModule.forFeature([HeaderEffects])
   ],

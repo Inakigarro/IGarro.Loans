@@ -7,7 +7,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { map } from 'rxjs';
 import { SidenavService } from './service/sidenav.service';
 import { SidenavEffects } from './state/sidenav.effects';
 import { sidenavReducer, SIDENAV_FEATURE_KEY } from './state/sidenav.reducer';

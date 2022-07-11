@@ -37,5 +37,5 @@ describe('Header Effects', () => {
 
         // Assert.
         expect(effects.initHeader$).toBeObservable(expected);
-    })
+    });
 })

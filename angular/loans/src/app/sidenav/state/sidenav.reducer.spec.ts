@@ -31,7 +31,9 @@ describe('Sidenav Reducer', () => {
     });
     it('Should hide sidenav', () => {
         // Arrange.
-        const action = SidenavActions.hideSidenav();
+        const action = SidenavActions.hideSidenav({
+            expanded: false
+        });
 
         const mockReducer : SidenavReducer.SidenavState = {
             loaded: true,
@@ -51,7 +53,9 @@ describe('Sidenav Reducer', () => {
     });
     it('Should expand sidenav', () => {
         // Arrange.
-        const action = SidenavActions.expandSidenav();
+        const action = SidenavActions.expandSidenav({
+            expanded: true
+        });
 
         const mockReducer : SidenavReducer.SidenavState = {
             loaded: true,

@@ -6,4 +6,4 @@ export const initHeader = createAction(
 
 export const menuButtonClicked = createAction(
     '[Header Menu Button] - Menu button clickead'
-)
+);

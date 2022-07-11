@@ -98,7 +98,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              {
+                "input": "src/my-theme.scss"
+              }
             ],
             "scripts": []
           }

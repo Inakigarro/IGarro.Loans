@@ -16,7 +16,4 @@ export class HeaderComponent {
     console.log('menu button clicked');
     this.service.dispatch(menuButtonClicked())
   }
-  public profileButtonClicked(){
-    console.log('profile button clicked');
-  }
 }
