@@ -1,3 +1,4 @@
+import { Statement } from "@angular/compiler";
 import { Action, createReducer, on } from "@ngrx/store";
 import * as SidenavActions from './sidenav.actions';
 
@@ -5,7 +6,8 @@ export const SIDENAV_FEATURE_KEY = "sidenav";
 
 export interface SidenavState {
     loaded: boolean;
-    expanded: boolean;
+    sidenavExpanded: boolean;
+    profileExpanded: boolean;
 }
 
 export interface SidenavPartialState {
@@ -14,7 +16,8 @@ export interface SidenavPartialState {
 
 export const initialState : SidenavState = {
     loaded: false,
-    expanded: false
+    sidenavExpanded: false,
+    profileExpanded: false
 }
 
 export const sidenavReducer = createReducer(
@@ -22,16 +25,28 @@ export const sidenavReducer = createReducer(
     on(SidenavActions.initSidenav, state => ({
         ...state,
         loaded: true,
-        expanded: true
+        sidenavExpanded: true
     })),
     on(
         SidenavActions.expandSidenav,
         SidenavActions.hideSidenav,
         (state, action) => ({
             ...state,
-            expanded: action.expanded
+            sidenavExpanded: action.expanded
         })
-    )
+    ),
+    on(
+        SidenavActions.expandProfile,
+        SidenavActions.hideProfile,
+        (state, action) => ({
+            ...state,
+            profileExpanded: action.expanded
+        })
+    ),
+    on(SidenavActions.backdropClicked, state => ({
+        ...state,
+        profileExpanded: false
+    }))
 );
 
 export function reducer(state: SidenavState | undefined, action: Action){

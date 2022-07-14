@@ -7,12 +7,12 @@ export interface HeaderState {
     loaded: boolean
 }
 
-export const initalState : HeaderState = {
+export const initialState : HeaderState = {
     loaded: false
 }
 
 export const headerReducer = createReducer(
-    initalState,
+    initialState,
     on(HeaderActions.initHeader, state => ({
         ...state,
         loaded: true

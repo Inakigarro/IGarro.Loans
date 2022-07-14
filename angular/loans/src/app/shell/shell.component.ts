@@ -6,12 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ShellService } from './service/shell.service';
 import { SidenavModule } from '../sidenav/sidenav.component';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from '../header/header.module';
 import { EffectsModule } from '@ngrx/effects';
 import { ShellEffects } from './state/shell.effects';
+import { FooterModule } from '../footer/footer.component';
 
 @Component({
   selector: 'app-shell',
@@ -35,6 +33,7 @@ export class ShellComponent implements OnInit {
     CommonModule,
     HeaderModule,
     SidenavModule,
+    FooterModule,
     MatButtonModule,
     MatIconModule,
     StoreModule.forFeature(SHELL_FEATURE_KEY, shellReducer),

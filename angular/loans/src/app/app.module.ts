@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { ShellComponent, ShellModule } from './shell/shell.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
+import { ShellModule } from './shell/shell.component';
 import { appReducer } from './state/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
 

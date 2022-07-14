@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { map, withLatestFrom } from "rxjs/operators";
 import { initHeader, menuButtonClicked } from "../../header/state/header.actions";
+import { profileButtonClicked } from '../../menu/state/menu.actions';
 import { SidenavService } from "../service/sidenav.service";
 import { initSidenav } from "./sidenav.actions";
 import * as SidenavActions from './sidenav.actions';
@@ -17,7 +18,7 @@ export class SidenavEffects {
     public menuButtonClicked$ = createEffect(() =>
         this.actions$.pipe(
             ofType(menuButtonClicked),
-            withLatestFrom(this.service.getExpanded$),
+            withLatestFrom(this.service.getSidenavExpanded$),
             map(([_, expanded]) => {
                 if(expanded){
                     console.log(expanded);
@@ -29,6 +30,24 @@ export class SidenavEffects {
                 return SidenavActions.expandSidenav({
                     expanded: true
                 });
+            })
+        ));
+
+    public profileButtonclicked$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(profileButtonClicked),
+            withLatestFrom(this.service.getProfileExpanded$),
+            map(([_, expanded]) => {
+                if(expanded){
+                    console.log(expanded);
+                    return SidenavActions.hideProfile({
+                        expanded: false
+                    });
+                }
+                console.log(expanded);
+                return SidenavActions.expandProfile({
+                    expanded: true
+                })
             })
         ))
     constructor(

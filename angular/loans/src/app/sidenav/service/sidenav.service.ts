@@ -12,9 +12,13 @@ export class SidenavService {
         SidenavSelectors.selectLoaded
     );
 
-    public getExpanded$ = this.store.select(
+    public getSidenavExpanded$ = this.store.select(
         SidenavSelectors.selectExpanded
     );
+
+    public getProfileExpanded$ = this.store.select(
+        SidenavSelectors.selectProfileExpanded
+    )
     
     public dispatch(action: Action){
         this.store.dispatch(action);

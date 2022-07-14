@@ -19,8 +19,9 @@ function configureTestingModule(
             provideMockStore(),
             provideMockActions(() => action),
         ]
-    })
+    });
 }
+
 describe('Shell Effects', () => {
     it('On initApp, should dispatch initShell', () => {
         // Arrange.

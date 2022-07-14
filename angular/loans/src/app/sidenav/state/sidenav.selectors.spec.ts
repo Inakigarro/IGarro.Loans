@@ -24,7 +24,7 @@ describe('Sidenav Selectors', () => {
         // Arrange.
         const state: SidenavReducer.SidenavState = {
             ...SidenavReducer.initialState,
-            expanded: true
+            sidenavExpanded: true
         };
 
         const sidenavState : SidenavReducer.SidenavPartialState = {

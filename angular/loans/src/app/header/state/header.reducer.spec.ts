@@ -7,8 +7,9 @@ describe('Header Reducer', () => {
         const action = {type: 'sarasa'} as Action;
 
         // Act.
-        const reducerResult = HeaderReducer.reducer(HeaderReducer.initalState, action);
+        const reducerResult = HeaderReducer.reducer(HeaderReducer.initialState, action);
 
-        expect(reducerResult).toEqual(HeaderReducer.initalState);
+        // Assert.
+        expect(reducerResult).toEqual(HeaderReducer.initialState);
     })
 })

@@ -12,5 +12,10 @@ export const selectLoaded = createSelector(
 
 export const selectExpanded = createSelector(
     getSidenavState,
-    (state) => state.expanded
+    (state) => state.sidenavExpanded
 );
+
+export const selectProfileExpanded = createSelector(
+    getSidenavState,
+    (state) => state.profileExpanded
+)

@@ -1,4 +1,4 @@
-import { createReducer, on } from "@ngrx/store";
+import { Action, createReducer, on } from "@ngrx/store";
 import * as MenuActions from './menu.actions';
 
 export const MENU_FEATURE_KEY = 'menu';
@@ -23,8 +23,12 @@ export const menuReducer = createReducer(
         ...state,
         loaded: true
     })),
-    on(MenuActions.profileButtonClicked, (state, action) => ({
+    on(MenuActions.profilePictureButton, (state, action) => ({
         ...state,
-        expanded: action.expanded
+        expanded: !state.expanded
     }))
-)
+);
+
+export function reducer(state: MenuState | undefined, action: Action){
+    return menuReducer(state, action);
+}

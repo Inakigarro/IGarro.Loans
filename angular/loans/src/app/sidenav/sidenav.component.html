@@ -1,10 +1,34 @@
-<mat-sidenav-container class="body-container">
-    <mat-sidenav mode="side" [opened]="expanded$ | async" class="sidenav">
+<mat-drawer-container autosize class="body-container" (backdropClick)="backdropClicked()">
+    <mat-drawer mode="side" [opened]="sidenaveExpanded$ | async" class="sidenav">
         <mat-nav-list class="sidenav-list">
             <button mat-raised-button color="primary">
                 <a  href="https://www.google.com" target="_blank">Google</a>
             </button>
         </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>content</mat-sidenav-content>
-</mat-sidenav-container>
+    </mat-drawer>
+    <mat-drawer mode="over" position="end" [opened]="profileDrawerExpanded$ | async" class="profile-side-nav">
+        <mat-card>
+            <mat-card-header>
+                <h1>IÑAKI GARRO</h1>
+            </mat-card-header>
+            <mat-card-content>
+                <UL>
+                    <LI>
+                        SSR FULLSTACK DEVELOPER.
+                    </LI>
+                    <LI>
+                        ESPORTS LOVER
+                    </LI>
+                    <LI>
+                        FOREVER ALONE
+                    </LI>
+                </UL>
+                
+                
+                 
+            </mat-card-content>
+        </mat-card>
+    </mat-drawer>
+    <mat-drawer-content>content</mat-drawer-content>
+</mat-drawer-container>
+<app-footer></app-footer>

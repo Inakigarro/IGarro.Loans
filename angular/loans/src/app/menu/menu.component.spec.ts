@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { MenuComponent } from './menu.component';
+import { MenuService } from './service/menu.service';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -8,7 +10,11 @@ describe('MenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuComponent ]
+      declarations: [ MenuComponent ],
+      providers:[
+        MenuService,
+        provideMockStore()
+      ]
     })
     .compileComponents();
 

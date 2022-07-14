@@ -1,11 +1,17 @@
-mat-sidenav {
+.sidenav {
     background: black;
     color: white;
     width: 175px;
 }
 
-mat-sidenav-content {
+mat-drawer-content {
     background: lightskyblue;
+}
+
+.profile-side-nav {
+    background: black;
+    color: white;
+    width: auto;
 }
 
 .sidenav-list {
@@ -14,5 +20,10 @@ mat-sidenav-content {
 }
 
 .body-container {
-    height: 100%;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 44px;
+    z-index: 1;
 }

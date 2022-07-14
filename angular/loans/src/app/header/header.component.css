@@ -13,9 +13,4 @@ mat-toolbar {
     display: flex;
     flex-direction: row;
 }
-.buttons .profile-button {
-    background: none;
-}
-.buttons .profile-button:hover{
-    cursor: pointer;
-}
+ 

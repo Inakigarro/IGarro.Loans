@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule, OnInit } from '@angular/core';
+import { MatMenuModule } from '@angular/material/menu'
+import { MatIconModule } from '@angular/material/icon';
 import { StoreModule } from '@ngrx/store';
-import { map } from 'rxjs';
 import { MenuService } from './service/menu.service';
 import * as MenuActions from './state/menu.actions';
 import { MENU_FEATURE_KEY, menuReducer } from './state/menu.reducer';
@@ -22,12 +23,7 @@ export class MenuComponent implements OnInit {
 
   public profileButtonClicked(){
     console.log('profile button clicked');
-    this.isExpanded$.pipe(
-      map((expanded) => 
-        this.service.dispatch(MenuActions.profileButtonClicked({
-          expanded: !expanded
-        })))
-    )
+    this.service.dispatch(MenuActions.profileButtonClicked())
   }
 }
 
@@ -35,6 +31,8 @@ export class MenuComponent implements OnInit {
   declarations:[MenuComponent],
   imports:[
     CommonModule,
+    MatMenuModule,
+    MatIconModule,
     StoreModule.forFeature(MENU_FEATURE_KEY, menuReducer)
   ],
   exports:[MenuComponent]
