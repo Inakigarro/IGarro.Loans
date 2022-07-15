@@ -20,7 +20,8 @@ describe('Sidenav Reducer', () => {
 
         const mockReducer : SidenavReducer.SidenavState = {
             loaded: true,
-            sidenavExpanded: true
+            sidenavExpanded: true,
+            profileExpanded: false,
         };
 
         // Act.
@@ -37,12 +38,14 @@ describe('Sidenav Reducer', () => {
 
         const mockReducer : SidenavReducer.SidenavState = {
             loaded: true,
-            sidenavExpanded: true
+            sidenavExpanded: true,
+            profileExpanded: false,
         };
 
         const expectedReducer : SidenavReducer.SidenavState = {
             loaded: true,
-            sidenavExpanded: false
+            sidenavExpanded: false,
+            profileExpanded: false
         };
 
         // Act.
@@ -59,12 +62,14 @@ describe('Sidenav Reducer', () => {
 
         const mockReducer : SidenavReducer.SidenavState = {
             loaded: true,
-            sidenavExpanded: false
+            sidenavExpanded: false,
+            profileExpanded: false,
         };
 
         const expectedReducer : SidenavReducer.SidenavState = {
             loaded: true,
-            sidenavExpanded: true
+            sidenavExpanded: true,
+            profileExpanded: false,
         };
 
         // Act.
