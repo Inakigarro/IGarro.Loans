@@ -24,3 +24,9 @@ services:
       - "CMD"
       - "rabbitmqctl"
       - "status"
+
+# Services
+  materials:
+    image: prestamos.materials.application:localdev
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
