@@ -34,7 +34,7 @@ namespace Prestamos.Materials.Application
                     {
                         mt.UsingRabbitMq((context, cfg) =>
                         {
-                            cfg.Host("localhost", "/", h =>
+                            cfg.Host("rabbitmq", "/", h =>
                             {
                                 h.Username("guest");
                                 h.Password("guest");
@@ -59,7 +59,7 @@ namespace Prestamos.Materials.Application
                     services.AddDbContext<MaterialsDbContext>(options =>
                     {
                         options.UseSqlServer(
-                            "Server=localhost;Database=master;Trusted_Connection=True;TrustServerCertificate=True",
+                            "Server=localhost,1433;Database=master;Trusted_Connection=True;TrustServerCertificate=True;User=sa;Password=devpassword(!)001",
                             assembly => assembly.MigrationsAssembly(typeof(MaterialsDbContext).Assembly.FullName));
                     });
 
