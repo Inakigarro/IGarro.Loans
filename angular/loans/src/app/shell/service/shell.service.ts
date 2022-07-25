@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Action, Store } from "@ngrx/store";
+import * as ShellSelectors from '../state/shell.selectors'
 
 @Injectable({
     providedIn: 'root'
@@ -7,7 +8,11 @@ import { Action, Store } from "@ngrx/store";
 export class ShellService {
     constructor(private readonly store: Store){}
 
+    public getProfileExpanded$ = this.store.select(
+        ShellSelectors.selectProfileExpanded
+    );
+
     public dispatch(action: Action){
         this.store.dispatch(action);
-    }
+    };
 }

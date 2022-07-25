@@ -5,6 +5,7 @@ export const SHELL_FEATURE_KEY = "shell";
 
 export interface ShellState {
     loaded: boolean;
+    profileExpanded: boolean;
 }
 
 export interface ShellPartialState {
@@ -12,7 +13,8 @@ export interface ShellPartialState {
 }
 
 export const initialState : ShellState = {
-    loaded: false
+    loaded: false,
+    profileExpanded: false
 }
 
 export const shellReducer = createReducer(
@@ -20,6 +22,10 @@ export const shellReducer = createReducer(
     on(ShellActions.initShell, state => ({
         ...state,
         loaded: true
+    })),
+    on(ShellActions.profileButtonClicked, state =>({
+        ...state,
+        profileExpanded: !state.profileExpanded
     })),
 )
 

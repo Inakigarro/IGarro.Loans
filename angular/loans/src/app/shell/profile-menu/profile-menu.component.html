@@ -1,0 +1,9 @@
+<button class="profile-button" [matMenuTriggerFor]="menu">
+    <img src="../../assets/profile-picture.png">
+</button>
+<mat-menu #menu>
+    <button mat-menu-item (click)="profileButtonClicked()">
+        <mat-icon>person</mat-icon>
+        <span>Profiel</span>
+    </button>
+</mat-menu>

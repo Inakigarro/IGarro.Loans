@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderService } from './service/header.service';
-import * as HeaderActions from './state/header.actions';
 import { menuButtonClicked } from './state/header.actions';
 
 @Component({

@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { map, withLatestFrom } from "rxjs/operators";
-import { initHeader, menuButtonClicked } from "../../header/state/header.actions";
+import { initHeader } from "../../header/state/header.actions";
+import {menuButtonClicked} from '../../shell/state/shell.actions'
 import { profileButtonClicked } from '../../menu/state/menu.actions';
 import { SidenavService } from "../service/sidenav.service";
 import { initSidenav } from "./sidenav.actions";

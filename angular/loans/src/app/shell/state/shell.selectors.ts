@@ -9,3 +9,8 @@ export const selectLoaded = createSelector(
     getShellState,
     (state) => state.loaded
 );
+
+export const selectProfileExpanded = createSelector(
+    getShellState,
+    (state) => state.profileExpanded
+)
