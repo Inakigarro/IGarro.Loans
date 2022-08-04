@@ -3,12 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderModule } from './header/header.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { ShellModule } from './shell/shell.component';
 import { appReducer } from './state/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
+import { ShellModule } from './shell/shell.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,6 @@ import { EffectsModule } from '@ngrx/effects';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeaderModule,
     ShellModule,
     StoreModule.forRoot({app: appReducer}, {}),
     EffectsModule.forRoot([]),

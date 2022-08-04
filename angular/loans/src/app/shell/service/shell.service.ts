@@ -8,6 +8,10 @@ import * as ShellSelectors from '../state/shell.selectors'
 export class ShellService {
     constructor(private readonly store: Store){}
 
+    public getSidenavExpanded$ = this.store.select(
+        ShellSelectors.selectExpanded
+    );
+
     public getProfileExpanded$ = this.store.select(
         ShellSelectors.selectProfileExpanded
     );

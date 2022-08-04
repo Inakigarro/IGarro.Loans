@@ -6,14 +6,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ShellService } from './service/shell.service';
-import { SidenavModule } from '../sidenav/sidenav.component';
-import { HeaderModule } from '../header/header.module';
 import { EffectsModule } from '@ngrx/effects';
 import { ShellEffects } from './state/shell.effects';
 import { FooterModule } from '../footer/footer.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProfileMenuComponent } from './profile-menu/profile-menu.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { SidenavComponent } from '../sidenav/sidenav.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-shell',
@@ -30,24 +35,29 @@ export class ShellComponent implements OnInit {
 }
 
 const MaterialModules = [
-  MatButtonModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatMenuModule
+  
 ]
 
 @NgModule({
   declarations:[
     ShellComponent,
     TopBarComponent,
-    ProfileMenuComponent
+    ProfileMenuComponent,
+    SidenavComponent
   ],
   imports: [
     CommonModule,
-    HeaderModule,
-    SidenavModule,
     FooterModule,
-    MaterialModules,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatCardModule,
+    MatListModule,
+    MatSidenavModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    BrowserModule,
     StoreModule.forFeature(SHELL_FEATURE_KEY, shellReducer),
     EffectsModule.forFeature([ShellEffects])
   ],
